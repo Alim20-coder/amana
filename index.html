@@ -1842,13 +1842,7 @@
       <div class="divider"></div>
       <p>نماذج حقيقية من خدمات نقل العفش التي قدمناها لعملائنا الكرام</p>
     </div>
-    <div class="gallery-filter reveal" role="group" aria-label="فلترة المعرض">
-      <button class="filter-btn active" data-filter="all">الكل</button>
-      <button class="filter-btn" data-filter="bedroom">غرف نوم</button>
-      <button class="filter-btn" data-filter="living">صالات</button>
-      <button class="filter-btn" data-filter="kitchen">مطابخ</button>
-      <button class="filter-btn" data-filter="moving">نقل</button>
-    </div>
+
     <div class="gallery-grid reveal" id="galleryGrid" style="transition-delay:0.15s"></div>
   </div>
 </section>
@@ -1907,7 +1901,7 @@
       </div>
       <div class="col-lg-6 reveal-right">
         <div class="why-img-wrap">
-          <img src="/Css/2.jpeg" alt="فريق الأمانة والإتقان لنقل العفش في الدمام" style="width:100%;border-radius:24px;display:block;"
+          <img src="/Css/logo.png" alt="فريق الأمانة والإتقان لنقل العفش في الدمام" style="width:100%;border-radius:24px;display:block;"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="why-img-placeholder" style="display:none;">
             <i class="fas fa-truck-moving" aria-hidden="true"></i>
@@ -2815,16 +2809,10 @@ window.addEventListener('load', function() {
     'الشاشات الكبيرة', 'المكيفات', 'الأثاث الخارجي', 'الديكورات',
     'الكنب الفاخر', 'الأثاث الكامل'
   ];
-  const categories = [
-    'bedroom','kitchen','living','moving','moving','moving','moving','bedroom',
-    'moving','moving','kitchen','moving','moving','bedroom','kitchen','kitchen',
-    'living','kitchen','living','living','living','moving'
-  ];
   window._galleryImages = [];
   Array.from({length: 22}, function(_, i) { return i + 1; }).forEach(function(n) {
     const item = document.createElement('div');
     item.className = 'gallery-item';
-    item.setAttribute('data-category', categories[n-1]);
     item.setAttribute('data-index', String(n-1));
     window._galleryImages.push({src: '/Css/' + n + '.jpeg', label: labels[n-1]});
     item.innerHTML = [
@@ -2873,20 +2861,7 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowLeft') lbNav(1);
 });
 
-// Gallery filter
-document.querySelectorAll('.filter-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
-    this.classList.add('active');
-    const filter = this.getAttribute('data-filter');
-    document.querySelectorAll('.gallery-item').forEach(function(item) {
-      const cat = item.getAttribute('data-category');
-      const show = filter === 'all' || cat === filter;
-      item.style.display = show ? '' : 'none';
-      item.style.animation = show ? 'lbIn 0.4s ease' : '';
-    });
-  });
-});
+
 
 /* =====================================================
    TESTIMONIALS
