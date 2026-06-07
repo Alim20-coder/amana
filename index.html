@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl" prefix="og: https://ogp.me/ns#">
 <head>
   <meta charset="UTF-8">
@@ -2807,22 +2807,16 @@ window.addEventListener('load', function() {
     'نقل مكاتب', 'صناديق التعبئة', 'الأجهزة المنزلية', 'نقل بين المدن',
     'التخزين', 'خزائن الملابس', 'الثلاجات', 'الغسالات',
     'الشاشات الكبيرة', 'المكيفات', 'الأثاث الخارجي', 'الديكورات',
-    'الكنب الفاخر', 'الأثاث الكامل'
-  ];
-  const categories = [
-    'bedroom','kitchen','living','moving','moving','moving','moving','bedroom',
-    'moving','moving','kitchen','moving','moving','bedroom','kitchen','kitchen',
-    'living','kitchen','living','living','living','moving'
+    'الكنب الفاخر', 'الأثاث الكامل', 'نقل احترافي'
   ];
   window._galleryImages = [];
-  Array.from({length: 22}, function(_, i) { return i + 1; }).forEach(function(n) {
+  Array.from({length: 23}, function(_, i) { return i + 1; }).forEach(function(n) {
     const item = document.createElement('div');
     item.className = 'gallery-item';
-    item.setAttribute('data-category', categories[n-1]);
     item.setAttribute('data-index', String(n-1));
-    window._galleryImages.push({src: '/Css/' + n + '.png', label: labels[n-1]});
+    window._galleryImages.push({src: './CSS/' + n + '.png', label: labels[n-1]});
     item.innerHTML = [
-      '<img src="/Css/' + n + '.png"',
+      '<img src="./CSS/' + n + '.png"',
       ' alt="نقل عفش الدمام - ' + labels[n-1] + '"',
       ' loading="lazy"',
       ' onerror="this.style.display=\'none\';this.parentElement.classList.add(\'gallery-placeholder\');this.parentElement.innerHTML+=\'<i class=&quot;fas fa-image&quot; aria-hidden=&quot;true&quot;></i><span>' + labels[n-1] + '</span>\'"',
